@@ -617,16 +617,15 @@ textarea.input {
     backdrop-filter: blur(4px);
     width: min(512px, calc(100% - 24px));
     margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
     transition: transform 0.3s cubic-bezier(0.911, 0.161, 0.181, 0.797);
 }
 
 /* ----- SUCCESS PAGE SPECIFIC ----- */
 
 .success-page {
-    z-index: 40;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
     background:
         radial-gradient(circle at 0% 0%, var(--color-state-green) 0%, var(--color-surface-alt) 20%),
         radial-gradient(circle at 100% 100%, var(--color-state-green) 0%, var(--color-surface-alt) 25%);
@@ -640,3 +639,20 @@ textarea.input {
 
 .success-page .btn { background-color: var(--color-state-green); }
 .success-page.active { transform: translate(-50%, -50%) scale(1); }
+
+/* ----- FAILURE PAGE SPECIFIC ----- */
+
+.failure-page {
+    background:
+        radial-gradient(circle at 0% 0%, var(--color-state-red) 0%, var(--color-surface-alt) 20%),
+        radial-gradient(circle at 100% 100%, var(--color-state-red) 0%, var(--color-surface-alt) 25%);
+}
+
+.failure-page .symbol {
+    background-color: var(--color-state-red);
+    border-radius: 50%;
+    padding: 12px;
+}
+
+.failure-page .btn { background-color: var(--color-state-red); }
+.failure-page.active { transform: translate(-50%, -50%) scale(1); }
