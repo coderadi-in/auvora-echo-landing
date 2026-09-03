@@ -3,22 +3,41 @@
 // ==================================================
 
 const successPage = document.getElementById('successPage');
-
-const challengeName = document.getElementById('challengeName');
-const challengeEmail = document.getElementById('challengeEmail');
-const challengePhone = document.getElementById('challengePhone');
-const challengeDesc = document.getElementById('challengeDesc');
-
-const challengeSend = document.querySelector('#challengeForm .send');
 const hideSuccessPage = document.querySelector('.success-page .btn');
+
+const registrationForm = document.getElementById('registrationForm');
+const enquiryForm = document.getElementById('enquiryForm');
+
+const registrationFormTrigger = document.getElementById('registrationFormTrigger');
+const closeRegistrationForm = document.getElementById('closeRegistrationForm');
+const registrationSubmit = document.getElementById('registrationSubmit');
+
+const registrationName = document.getElementById('registrationName');
+const registrationEmail = document.getElementById('registrationEmail');
+const registrationPhone = document.getElementById('registrationPhone');
+const registrationBusiness = document.getElementById('registrationBusiness');
+
+const enquiryFormTrigger = document.getElementById('enquiryFormTrigger');
+const closeEnquiryForm = document.getElementById('closeEnquiryForm');
+const enquirySubmit = document.getElementById('enquirySubmit');
+
+const enquiryName = document.getElementById('enquiryName');
+const enquiryEmail = document.getElementById('enquiryEmail');
+const enquiryPhone = document.getElementById('enquiryPhone');
+const enquiryMessage = document.getElementById('enquiryMessage');
 
 // ==================================================
 // FUNCTIONS
 // ==================================================
 
-// * FUNCTION TO TOGGLE SEND-BTN STATE
-function toggleSendBtnState(btn) {
-    btn.classList.toggle('disabled', challengeName.value.trim() === '' || challengeEmail.value.trim() === '' || challengePhone.value.trim() === '' || challengeDesc.value.trim() === '');
+// * FUNCTION TO TOGGLE REGISTRATION SEND-BTN STATE
+function toggleRegistration(btn) {
+    btn.classList.toggle('disabled', registrationName.value.trim() === '' || registrationEmail.value.trim() === '' || registrationPhone.value.trim() === '' || registrationBusiness.value.trim() === '');
+}
+
+// * FUNCTION TO TOGGLE ENQUIRY SEND-BTN STATE
+function toggleEnquiry(btn) {
+    btn.classList.toggle('disabled', enquiryName.value.trim() === '' || enquiryEmail.value.trim() === '' || enquiryPhone.value.trim() === '' || enquiryMessage.value.trim() === '');
 }
 
 // * FUNCTION TO UPDATE INPUT STATES
@@ -101,7 +120,7 @@ function addSubmissionListener(submitBtn, entries, submitURL) {
 
             submitBtn.classList.remove('open');
             setTimeout(() => {
-                successPage.classList.add('open');
+                successPage.classList.add('active');
             }, 400);
 
         } catch {
@@ -115,32 +134,37 @@ function addSubmissionListener(submitBtn, entries, submitURL) {
 // EVENT LISTENERS
 // ==================================================
 
-// & EVENT LISTENER FOR SETTINGS POPOVER TOGGLE
-challengeForm.addEventListener('beforetoggle', (event) => {
-    setTimeout(() => {
-        challengeForm.classList.toggle('open', event.newState === 'open');
-    }, 100);
+// & EVENT LISTENER FOR FORM STATE TOGGLE
+formTrigger.addEventListener('click', () => {
+    form.classList.add('active');
+});
+
+// & EVENT LISTENER FOR FORM STATE TOGGLE
+closeForm.addEventListener('click', () => {
+    form.classList.remove('active');
 });
 
 // & EVENT LISTENER FOR INPUT VALIDATION
-addUpdateStateChanger(challengeName, challengeSend);
-addUpdateStateChanger(challengeEmail, challengeSend);
-addUpdateStateChanger(challengePhone, challengeSend);
-addUpdateStateChanger(challengeDesc, challengeSend);
+addUpdateStateChanger(username, submitBtn);
+addUpdateStateChanger(email, submitBtn);
+addUpdateStateChanger(phone, submitBtn);
+addUpdateStateChanger(business, submitBtn);
 
 // & EVENT LISTENER FOR SUCCESS PAGE CLOSE
 hideSuccessPage.addEventListener('click', () => {
-    successPage.classList.remove('open');
+    successPage.classList.remove('active');
 });
 
-// & EVENT LISTENER FOR CHALLENGE FORM SUBMISSION
+// & EVENT LISTENER FOR FORM SUBMISSION
 addSubmissionListener(
-    challengeSend,
+    submitBtn,
     {
-        'entry.1411531399': challengeName,
-        'entry.584943803': challengeEmail,
-        'entry.650751546': challengePhone,
-        'entry.63267066': challengeDesc,
+        'entry.1918707273': username,
+        'entry.1654067689': email,
+        'entry.700167914': phone,
+        'entry.1259074432': business,
     },
-    'https://docs.google.com/forms/d/e/1FAIpQLSevf1sFPc3Rp5Ewv3AZZnaidtxGksUsDJZpnqPrixrWPV1rPg/formResponse'
+    'https://docs.google.com/forms/d/e/1FAIpQLSe5k_scVs7FVaPFfD6KgNR3T7wGEa6MZPDKXUvp-KA1bEZ6XA/formResponse'
 );
+
+// https://docs.google.com/forms/d/e/1FAIpQLSfTXjt5uYNt296mS8vLoXKfgS47EMcyYJdvsb432ZEy3IvKwA/viewform?usp=pp_url&entry.1551876098=ADI&entry.1204135284=adi@coderadi.in&entry.1855383320=000&entry.1083720747=I+don't+know

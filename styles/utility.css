@@ -623,6 +623,7 @@ textarea.input {
 /* ----- SUCCESS PAGE SPECIFIC ----- */
 
 .success-page {
+    z-index: 40;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
@@ -638,4 +639,4 @@ textarea.input {
 }
 
 .success-page .btn { background-color: var(--color-state-green); }
-.success-page.open { transform: translate(-50%, -50%) scale(1); }
+.success-page.active { transform: translate(-50%, -50%) scale(1); }

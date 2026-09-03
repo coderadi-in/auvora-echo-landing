@@ -25,6 +25,47 @@
 .claim .foot { font-style: italic; }
 
 /* ================================================== */
-/* FLOW */
+/* BUILD */
 /* ================================================== */
 
+.build .visual {
+    max-height: 0;
+    overflow: clip;
+    transition: max-height 0.4s ease-out;
+}
+
+.build .visual:hover {
+    max-height: 500px;
+}
+
+/* ================================================== */
+/* JOIN */
+/* ================================================== */
+
+.join .includes { max-width: 568px; }
+
+.join .includes .includes_content {
+    max-height: 0;
+    overflow: clip;
+    transition:
+        max-height 1s ease-out,
+        content-visibility 1s ease-in,
+        padding 0.5s;
+}
+
+.join .includes .head .symbol { transition: transform 0.4s ease-in; }
+.join .includes:hover .head .symbol { transform: rotate(90deg); }
+
+.join .includes:hover .includes_content {
+    padding-top: 20px;
+    max-height: 500px;
+}
+
+/* ================================================== */
+/* LIVE */
+/* ================================================== */
+
+.live .topics {
+    grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr));
+    max-width: 768px;
+}
