@@ -1,0 +1,45 @@
+/* ================================================== */
+/* LOADER */
+/* ================================================== */
+
+.loader {
+    position: fixed;
+    z-index: 99;
+    inset: 0;
+    background-color: var(--color-bg-main);
+    animation: Scale 1s ease-out 4.5s forwards;
+    pointer-events: none;
+}
+
+.loader svg { width: min(768px, 70%); }
+
+.loader svg path {
+    fill: transparent;
+    stroke: var(--color-fg-main);
+    stroke-width: 4px;
+    stroke-dasharray: 7800;
+    stroke-dashoffset: 7800;
+    animation: revealText 4.5s ease-in forwards;
+}
+
+@keyframes revealText {
+    0% { stroke-dashoffset: 7800; }
+    50% { fill: transparent; }
+
+    100% {
+        stroke-dashoffset: 0;
+        fill: var(--color-fg-main);
+    }
+}
+
+@keyframes Scale {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(10);
+        opacity: 0;
+    }
+}

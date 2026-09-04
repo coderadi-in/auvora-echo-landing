@@ -27,6 +27,8 @@ export function createIntersectionObserver() {
 // ==================================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    const observer = createIntersectionObserver();
-    sections.forEach(section => { observer.observe(section); });
+    setTimeout(() => {
+        const observer = createIntersectionObserver();
+        sections.forEach(section => { observer.observe(section); });
+    }, 5500);
 });
