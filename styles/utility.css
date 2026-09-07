@@ -117,7 +117,6 @@
 body {
     background-color: var(--color-bg-main);
     color: var(--color-fg-main);
-    height: 100dvh;
 }
 
 html {
