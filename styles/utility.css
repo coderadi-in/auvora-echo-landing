@@ -2,24 +2,30 @@
 /* IMPORTS */
 /* ================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
 
 /* ================================================== */
 /* BASIC APPEARANCE */
 /* ================================================== */
 
+/* --khaki-beige: #a69681ff;
+--bone: #e8dcc8ff;
+--parchment: #f4efe7ff;
+--camel: #b89a7aff;
+--stone-brown: #6f6254ff; */
+
 :root {
-    --color-bg-main: #08090D;
-    --color-bg-card: #101119;
-    --color-tertiary: #262B3A;
+    --color-bg-main: #6F6254;
+    --color-bg-card: #968573;
+    --color-tertiary: #E3D6B6;
     
-    --color-fg-main: #F8F7FF;
-    --color-fg-card: #CFC3D5;
+    --color-fg-main: #F4EFE7;
+    --color-fg-card: #B89A7A;
     
-    --color-surface-main: #0F111557;
-    --color-surface-alt: #262B3A57;
-    --color-border: #1E212B;
+    --color-surface-main: #6F625457;
+    --color-surface-alt: #96857357;
+    --color-border: #A69681;
 
     --color-state-red: #DF2935;
     --color-state-green: #488B49;
@@ -44,16 +50,11 @@
 }
 
 .theme-inverted {
-    --color-bg-main: #EAECF2;
-    --color-bg-card: #FDFDFF;
-    --color-tertiary: #D3D7E3;
+    --color-bg-main: #F4EFE7;
+    --color-bg-card: #B89A7A;
     
-    --color-fg-main: #242423;
-    --color-fg-card: #525251;
-
-    --color-surface-main: #12131757;
-    --color-surface-alt: #ACBED8A0;
-    --color-border: #333533;
+    --color-fg-main: #4A4239;
+    --color-fg-card: #968573;
 
     background-color: var(--color-bg-main);
     color: var(--color-fg-main);
@@ -313,16 +314,16 @@ html {
 .fw-600 { font-weight: 600 !important; }
 .fw-700 { font-weight: 700 !important; }
 
-.text-muted { color: #84848D; }
+.text-muted { color: #C8B79C; }
 .text-normal { color: var(--color-fg-main); }
 .text-inverted { color: var(--color-bg-main) !important; }
 .spacing-2 { letter-spacing: 2px; }
 
-.fn-inter { font-family: "Inter", sans-serif !important; }
-.fn-robo { font-family: "Roboto Condensed", sans-serif !important; }
+.fn-body { font-family: "Inter", sans-serif !important; }
+.fn-head { font-family: "Cormorant Garamond", sans-serif !important; }
 
 .h1 {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Cormorant Garamond", sans-serif;
     font-weight: normal;
     text-transform: uppercase;
     font-size: 36px;
@@ -331,7 +332,7 @@ html {
 }
 
 .h2 {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Cormorant Garamond", sans-serif;
     font-weight: 400;
     text-transform: uppercase;
     font-size: 32px;
@@ -340,7 +341,7 @@ html {
 }
 
 .h2-lw {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Cormorant Garamond", sans-serif;
     font-weight: 400;
     font-size: 32px;
     letter-spacing: 2px;
@@ -348,7 +349,7 @@ html {
 }
 
 .h3 {
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Cormorant Garamond", sans-serif;
     font-weight: 400;
     font-size: 24px;
     letter-spacing: 1px;
@@ -590,13 +591,13 @@ textarea.input {
 
 .disabled {
     background-color: var(--color-border);
-    color: var(--color-fg-card);
+    color: var(--color-fg-main);
     cursor: not-allowed;
     opacity: 0.6;
 }
 
 .disabled-alt {
-    color: var(--color-fg-card);
+    color: var(--color-bg-card);
     cursor: not-allowed;
     opacity: 0.6;
 }
