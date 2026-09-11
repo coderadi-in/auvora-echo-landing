@@ -2,34 +2,29 @@
 /* IMPORTS */
 /* ================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
 
 /* ================================================== */
 /* BASIC APPEARANCE */
 /* ================================================== */
 
-/* --khaki-beige: #a69681ff;
---bone: #e8dcc8ff;
---parchment: #f4efe7ff;
---camel: #b89a7aff;
---stone-brown: #6f6254ff; */
-
 :root {
-    --color-bg-main: #6F6254;
-    --color-bg-card: #968573;
+    --color-bg-main: #0F1115;
+    --color-bg-card: #1A1D23;
     --color-tertiary: #E3D6B6;
     
-    --color-fg-main: #F4EFE7;
-    --color-fg-card: #B89A7A;
+    --color-fg-main: #FFF9F0;
+    --color-fg-card: #ACACAC;
     
-    --color-surface-main: #6F625457;
-    --color-surface-alt: #96857357;
-    --color-border: #A69681;
+    --color-surface-main: #0F111557;
+    --color-surface-alt: #FFF9EF4D;
+    
+    --color-border: #2A2D35;
 
     --color-state-red: #DF2935;
-    --color-state-green: #488B49;
-    --color-state-yellow: #FCBA03;
+    --color-state-yellow: #FFBF00;
+    --color-state-green: #059669;
     --color-state-blue: #2364AA;
 }
 
@@ -50,11 +45,11 @@
 }
 
 .theme-inverted {
-    --color-bg-main: #F4EFE7;
-    --color-bg-card: #B89A7A;
+    --color-fg-main: #0F1115;
+    --color-fg-card: #1A1D23;
     
-    --color-fg-main: #4A4239;
-    --color-fg-card: #968573;
+    --color-bg-main: #FFF9EF;
+    --color-bg-card: #E7DCCC;
 
     background-color: var(--color-bg-main);
     color: var(--color-fg-main);
@@ -130,8 +125,8 @@ html {
     height: 100%;
     width: 100%;
     margin: 0 auto;
-    transform: translateY(24px);
-    opacity: 0;
+    /* transform: translateY(24px);
+    opacity: 0; */
     transition: transform 0.6s ease-out, opacity 0.3s;
 }
 
@@ -293,6 +288,7 @@ html {
 .text-left { text-align: left !important; }
 .text-center { text-align: center; }
 .text-right { text-align: right; }
+.text-both { text-align: justify !important; }
 .uppercase { text-transform: uppercase !important; }
 .lowercase { text-transform: lowercase !important; }
 .capitalize { text-transform: capitalize !important; }
@@ -314,13 +310,14 @@ html {
 .fw-600 { font-weight: 600 !important; }
 .fw-700 { font-weight: 700 !important; }
 
-.text-muted { color: #C8B79C; }
+.text-muted { color: #8A8A8A; }
 .text-normal { color: var(--color-fg-main); }
 .text-inverted { color: var(--color-bg-main) !important; }
 .spacing-2 { letter-spacing: 2px; }
 
 .fn-body { font-family: "Inter", sans-serif !important; }
 .fn-head { font-family: "Cormorant Garamond", sans-serif !important; }
+.fn-accent { font-family: "IBM Plex Mono", sans-serif !important; }
 
 .h1 {
     font-family: "Cormorant Garamond", sans-serif;
@@ -329,6 +326,7 @@ html {
     font-size: 36px;
     letter-spacing: 2px;
     user-select: none;
+    text-wrap: balance;
 }
 
 .h2 {
@@ -338,6 +336,7 @@ html {
     font-size: 32px;
     letter-spacing: 2px;
     user-select: none;
+    text-wrap: balance;
 }
 
 .h2-lw {
@@ -346,6 +345,7 @@ html {
     font-size: 32px;
     letter-spacing: 2px;
     user-select: none;
+    text-wrap: balance;
 }
 
 .h3 {
@@ -354,6 +354,7 @@ html {
     font-size: 24px;
     letter-spacing: 1px;
     user-select: none;
+    text-wrap: balance;
 }
 
 .text, .para {
@@ -361,13 +362,10 @@ html {
     font-size: 16px;
     letter-spacing: 1px;
     user-select: none;
+    text-wrap: balance;
 }
 
-.para {
-    max-width: 568px;
-    text-wrap: balance;
-    user-select: none;
-}
+.para { max-width: 568px; }
 
 .mini {
     font-weight: 400;
