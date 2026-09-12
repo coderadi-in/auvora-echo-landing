@@ -1,41 +1,30 @@
 /* ================================================== */
-/* ANIMATIONS */
-/* ================================================== */
-
-@keyframes loadWidth {
-    from { width: 0; }
-    to { width: 60%; }
-}
-
-/* ================================================== */
 /* HERO */
 /* ================================================== */
 
-.hero { margin-top: -117px; }
-
-/* ================================================== */
-/* VISION */
-/* ================================================== */
-
-.vision {
-    background-image: url('/assets/vision.webp');
+.hero {
+    background-image: url('/assets/hero.webp');
     background-size: cover;
     background-position: right;
+    margin-top: -117px;
 }
 
 /* ================================================== */
-/* INFO */
+/* ABOUT */
 /* ================================================== */
 
-.info .mini { font-style: italic; }
+.about .img {
+    aspect-ratio: 21 / 9;
+    object-fit: cover;
+}
 
 /* ================================================== */
-/* JOIN */
+/* APPLY */
 /* ================================================== */
 
-.join .includes { max-width: 568px; }
+.apply .includes { max-width: 568px; }
 
-.join .includes .includes_content {
+.apply .includes .body {
     max-height: 0;
     overflow: clip;
     transition:
@@ -44,62 +33,14 @@
         padding 0.5s;
 }
 
-.join .includes .head .symbol { transition: transform 0.4s ease-in; }
-.join .includes:hover .head .symbol { transform: rotate(90deg); }
+.apply .includes .head .symbol { transition: transform 0.4s ease-in; }
+.apply .includes:hover .head .symbol { transform: rotate(90deg); }
 
-.join .includes:hover .includes_content {
+.apply .includes:hover .body {
     padding-top: 20px;
     max-height: 500px;
 }
 
-/* ================================================== */
-/* BUILD */
-/* ================================================== */
-
-.build .progress_bar {
-    width: min(568px, 80%);
-    height: 8px;
-    position: relative;
-}
-
-.build .progress_bar .progress_done {
-    position: absolute;
-    background-color: var(--color-state-yellow);
-    inset: 0;
-    width: 0;
-    animation: loadWidth linear forwards;
-    animation-timeline: view();
-    animation-range: entry 10% cover 30%
-}
-
-.build .visual { max-width: 568px; }
-
-.build .visual .body {
-    max-height: 0;
-    overflow: clip;
-    transition:
-        max-height 1s ease-out,
-        content-visibility 1s ease-in,
-        padding 0.5s;
-}
-
-.build .visual .head .symbol { transition: transform 0.4s ease-in; }
-.build .visual:hover .head .symbol { transform: rotate(90deg); }
-
-.build .visual:hover .body {
-    padding-top: 20px;
-    max-height: 500px;
-}
-
-.build .visual .body .para:nth-child(1) .text { color: var(--color-state-green); }
-.build .visual .body .para:nth-child(2) .text { color: var(--color-state-yellow); }
-.build .visual .body .para:nth-child(3) .text { color: var(--color-state-red); }
-
-/* ================================================== */
-/* LIVE */
-/* ================================================== */
-
-.live .topics {
-    grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr));
-    max-width: 768px;
-}
+.apply .includes .body .para:nth-child(1) .text { color: var(--color-state-green); }
+.apply .includes .body .para:nth-child(2) .text { color: var(--color-state-yellow); }
+.apply .includes .body .para:nth-child(3) .text { color: var(--color-state-red); }

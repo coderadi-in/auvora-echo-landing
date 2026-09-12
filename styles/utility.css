@@ -11,7 +11,7 @@
 
 :root {
     --color-bg-main: #0F1115;
-    --color-bg-card: #1A1D23;
+    --color-bg-card: #19191E;
     --color-tertiary: #E3D6B6;
     
     --color-fg-main: #FFF9F0;
@@ -46,7 +46,7 @@
 
 .theme-inverted {
     --color-fg-main: #0F1115;
-    --color-fg-card: #1A1D23;
+    --color-fg-card: #19191E;
     
     --color-bg-main: #FFF9EF;
     --color-bg-card: #E7DCCC;
@@ -303,7 +303,7 @@ html {
 .fs-48 { font-size: 48px !important; }
 .fs-64 { font-size: min(64px, 10vw) !important; }
 .fs-96 { font-size: 96px !important; }
-.fs-128 { font-size: 128px !important; }
+.fs-128 { font-size: min(128px, 12vw) !important; }
 
 .fw-400 { font-weight: 400 !important; }
 .fw-500 { font-weight: 500 !important; }
