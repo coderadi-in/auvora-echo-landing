@@ -495,12 +495,26 @@ textarea.input {
     justify-content: center;
     gap: 8px;
     background-color: var(--color-fg-main);
-    color: #FDFDFF !important;
+    color: var(--color-bg-main) !important;
     transition: background-color 0.3s;
 }
-.icon-fl:hover { 
-    background-color: var(--color-fg-alt);
- }
+
+.icon-fl .text {
+    transform: translateX(16px);
+    transition: transform 0.3s;
+}
+
+.icon-fl .symbol {
+    transform: translateX(-12px);
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.icon-fl:hover .text { transform: translateX(0); }
+.icon-fl:hover .symbol {
+    transform: translateX(0);
+    opacity: 1;
+}
 
 /* ================================================== */
 /* LINKS */
