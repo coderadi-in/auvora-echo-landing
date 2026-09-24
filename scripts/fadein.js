@@ -3,6 +3,7 @@
 // ==================================================
 
 const sections = document.querySelectorAll('.section');
+const initialTimeDelay = 0;
 
 // ==================================================
 // FUNCTIONS
@@ -30,5 +31,5 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         const observer = createIntersectionObserver();
         sections.forEach(section => { observer.observe(section); });
-    }, 5500);
+    }, initialTimeDelay);
 });

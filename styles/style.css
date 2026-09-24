@@ -25,6 +25,12 @@
 .header .link:hover { color: #808080; }
 
 /* ================================================== */
+/* BASIC */
+/* ================================================== */
+
+
+
+/* ================================================== */
 /* HERO */
 /* ================================================== */
 
@@ -32,65 +38,56 @@
     background-image: url('/assets/hero.webp');
     background-size: cover;
     background-position: center;
-    margin-top: -117px;
+    margin-top: -72px;
+}
+
+@media (max-width: 568px) {
+    .hero { background-image: url('/assets/hero-phone.webp'); }
 }
 
 /* ================================================== */
-/* ABOUT */
+/* WORKFLOW */
 /* ================================================== */
 
-.about .img {
-    aspect-ratio: 21 / 9;
-    object-fit: cover;
+.workflow .body {
+    position: relative;
+    z-index: 0;
 }
 
-/* ================================================== */
-/* APPLY */
-/* ================================================== */
-
-.apply .includes { max-width: 568px; }
-
-.apply .includes .body {
-    max-height: 0;
-    overflow: clip;
-    transition:
-        max-height 1s ease-out,
-        content-visibility 1s ease-in,
-        padding 0.5s;
+.workflow .step .index { 
+    background-color: var(--color-fg-main);
+    color: var(--color-bg-main);
+    height: fit-content;
+    width: 60px;
+    height: 60px;
+    text-align: center;
 }
 
-.apply .includes .head .symbol { transition: transform 0.4s ease-in; }
-.apply .includes:hover .head .symbol { transform: rotate(90deg); }
-
-.apply .includes:hover .body {
-    padding-top: 20px;
-    max-height: 500px;
-}
-
-.apply .includes .body .para:nth-child(1) .text { color: var(--color-state-green); }
-.apply .includes .body .para:nth-child(2) .text { color: var(--color-state-yellow); }
-.apply .includes .body .para:nth-child(3) .text { color: var(--color-state-red); }
-
-/* ================================================== */
-/* GALLERY */
-/* ================================================== */
-
-.gallery .body .image-container { position: relative; }
-.gallery .body .image-container .img { transition: transform 0.3s ease-out; }
-
-.gallery .body .image-container::after {
+.workflow .body::before {
     content: '';
     position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: radial-gradient(circle, rgba(0,0,0,0) 40%, rgba(0,0,0,0.8) 80%);
-    opacity: 0;
-    transition: opacity 0.3s;
+    z-index: -1;
+    top: 0;
+    left: 30px;
+    width: 0px;
+    height: 100%;
+    border: 1px dashed var(--color-fg-main);
 }
 
-.gallery .body .image-container:hover::after { opacity: 1; }
-.gallery .body .image-container:hover .img { transform: scale(1.1); }
+/* ================================================== */
+/* PRICING */
+/* ================================================== */
 
-@media (max-width: 768px) {
-    .gallery .body { grid-template-columns: repeat(2, 1fr); }
+.pricing #mostPopular { position: relative; }
+
+.pricing #mostPopular::before,
+.pricing #mostPopular::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: -2px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #059669, #363457, #FE5F55);
 }
+
+.pricing #mostPopular::before { filter: blur(4px); }
