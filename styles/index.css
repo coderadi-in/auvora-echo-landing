@@ -1,0 +1,9 @@
+/* ================================================== */
+/* MAIN */
+/* ================================================== */
+
+.main {
+    background-image: url('/assets/hero.webp');
+    background-size: cover;
+    background-position: right;
+}
