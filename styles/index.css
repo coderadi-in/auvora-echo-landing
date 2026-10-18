@@ -3,7 +3,30 @@
 /* ================================================== */
 
 .main {
-    background-image: url('/assets/hero.webp');
-    background-size: cover;
-    background-position: right;
+    height: 100dvh;
+    transition: height 0.3s;
+}
+
+.main .vid-bg {
+    position: relative;
+    z-index: 0;
+}
+
+.main .vid-bg.bg-landscape { display: inline-block; }
+.main .vid-bg.bg-portrait { display: none; }
+
+.main .vid-bg {
+    position: absolute;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+.main .actions { padding-bottom: 40px; }
+
+@media (max-width: 768px) {
+    .main .vid-bg.bg-landscape { display: none; }
+    .main .vid-bg.bg-portrait { display: inline-block; }
 }
